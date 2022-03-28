@@ -1,0 +1,36 @@
+---
+title: "Data 605 HW 9"
+author: "Tyler Baker"
+date: "3/27/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Homework 9
+
+1. #11 page 363
+2. Calculate the expected value and variance of the binomial distribution using the moment
+generating function.
+3. Calculate the expected value and variance of the exponential distribution using the moment
+generating function.
+
+11. The price of one share of stock in the Pilsdorff Beer Company (see Exercise 8.2.12) is given by Yn on the nth day of the year. Finn observes that the differences Xn = Yn+1 − Yn appear to be independent random variables with a common distribution having mean µ = 0 and variance σ 2 = 1/4. If Y1 = 100, estimate the probability that Y365 is (a) ≥ 100. (b) ≥ 110. (c) ≥ 120.
+
+```{r}
+mean <- 100
+var <- .25
+n<- 364
+sd <- sqrt(var*n)
+
+1 - pnorm(100, mean, sd, lower.tail=T)
+```
+```{r}
+1 - pnorm(110,mean,sd)
+```
+
+```{r}
+1 - pnorm(120,mean,sd)
+```
